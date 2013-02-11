@@ -50,3 +50,10 @@ Virtual Host
 ------------
 Afterwards, set up a virtual host to point to the public/ directory of the
 project and you should be ready to go!
+
+
+TODO
+----
+* Add WebSessionLogger module (need to create one for ZF2)
+* Refactor base controller into reusable module
+* Implement a dynamic consumption of many config files into config/autoload/local.php

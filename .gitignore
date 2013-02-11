@@ -7,3 +7,7 @@ nbproject
 .project
 .settings
 composer.lock
+.vagrant
+zf2_skeleton.iml
+zf2_skeleton.ipr
+zf2_skeleton.iws
