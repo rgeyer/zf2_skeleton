@@ -16,6 +16,8 @@ class IndexController extends BaseController
 {
     public function indexAction()
     {
-        return new ViewModel();
+      return new ViewModel(array(
+          'zendversion' => \Zend\Version\Version::VERSION
+      ));
     }
 }

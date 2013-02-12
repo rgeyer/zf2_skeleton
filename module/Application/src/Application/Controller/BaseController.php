@@ -41,7 +41,4 @@ abstract class BaseController extends AbstractActionController {
       }
       return $this->em;
   }
-
-	public function init() {
-	}
 }
