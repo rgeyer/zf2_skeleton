@@ -34,18 +34,14 @@ abstract class BaseController extends AbstractActionController {
 	 */
 	protected $em;
 
-	/**
-	 *
-	 * @var \Zend_Log
-	 */
-	protected $log;
+  public function getEntityManager()
+  {
+      if (null === $this->em) {
+          $this->em = $this->getServiceLocator()->get('doctrine.entitymanager.orm_default');
+      }
+      return $this->em;
+  }
 
 	public function init() {
-		$bootstrap = $this->getInvokeArg('bootstrap');
-		$this->em = $bootstrap->getResource('doctrineEntityManager');
-
-    if ($bootstrap->hasResource('Log')) {
-	    $this->log = $bootstrap->getResource('Log');
-    }
 	}
 }
