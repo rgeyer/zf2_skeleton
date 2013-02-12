@@ -57,6 +57,9 @@ Vagrant::Config.run do |config|
       }
     }
 
+    # Install php-pdo & php-mysql..
+    # Modify the default vhost, and enable it.
+
     chef.run_list = [
       "recipe[apache2::default]",
       "recipe[apache2::mod_php5]",
