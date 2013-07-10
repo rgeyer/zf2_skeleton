@@ -1,13 +1,3 @@
-{assign var="headlink_ary" value=['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath()|cat:'/images/favicon.ico']}
-{$this->headLink($headlink_ary)->prependStylesheet($this->basePath()|cat:'/css/bootstrap-responsive.min.css')
-  ->prependStylesheet($this->basePath()|cat:'/css/style.css')
-  ->prependStylesheet($this->basePath()|cat:'/css/bootstrap.min.css')}
-
-{assign var="conditional_scripts_ary" value=['conditional' => 'lt IE 9']}
-{$this->headScript()->prependFile($this->basePath()|cat:'/js/html5.js', 'text/javascript', $conditional_scripts_ary)
-  ->prependFile($this->basePath()|cat:'/js/bootstrap.min.js')
-  ->prependFile($this->basePath()|cat:'/js/jquery.min.js')}
-
 {$this->doctype()}
 <html lang="en">
     <head>
@@ -16,9 +6,15 @@
 
         {$this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')}
 
-        {$this->headLink()}
+        {assign var="headlink_ary" value=['rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath()|cat:'/images/favicon.ico']}
+        {$this->headLink($headlink_ary)->prependStylesheet($this->basePath()|cat:'/css/bootstrap-responsive.min.css')
+          ->prependStylesheet($this->basePath()|cat:'/css/style.css')
+          ->prependStylesheet($this->basePath()|cat:'/css/bootstrap.min.css')}
 
-        {$this->headScript()}
+        {assign var="conditional_scripts_ary" value=['conditional' => 'lt IE 9']}
+        {$this->headScript()->prependFile($this->basePath()|cat:'/js/html5.js', 'text/javascript', $conditional_scripts_ary)
+          ->prependFile($this->basePath()|cat:'/js/bootstrap.min.js')
+          ->prependFile($this->basePath()|cat:'/js/jquery.min.js')}
 
     </head>
     <body>

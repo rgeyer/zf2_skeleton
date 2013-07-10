@@ -54,16 +54,17 @@ Vagrant::Config.run do |config|
         :server_root_password => 'password',
         :server_debian_password => 'debpass',
         :server_repl_password => 'replpass'
+      },
+      :zf2_vagrant_aio => {
+        :db => {
+          :schema => "zf2_skeleton"
+        }
       }
     }
 
-    # Install php-pdo & php-mysql..
-    # Modify the default vhost, and enable it.
-
     chef.run_list = [
-      "recipe[apache2::default]",
-      "recipe[apache2::mod_php5]",
-      "recipe[mysql::server]"
+      "recipe[yum::epel]",
+      "recipe[zf2_vagrant_aio::default]"
     ]
   end
 end
